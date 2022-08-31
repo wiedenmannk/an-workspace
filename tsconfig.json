@@ -18,20 +18,24 @@
     "importHelpers": true,
     "target": "es2020",
     "paths": {
-      "starter-lib": [
-        "dist/starter-lib"
-      ]
+      // dist/starter-lib verwendet die lib so wie wenn sie gebaut ist.
+      "starter-lib": ["projects/starter-lib/src/lib"],// ["dist/starter-lib"],
+      "starter-lib/*": ["projects/starter-lib/src/lib/*"],
+      "@modules/*": ["projects/skeleton/src/app/modules/*"],
+      "@service/*": ["projects/skeleton/src/app/service/*"],
+      "@dev/*": ["projects/skeleton/src/app/dev/*"],
+      "@appmodel/*": ["projects/skeleton/src/app/model/*"]
     },
     "module": "es2020",
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
 }

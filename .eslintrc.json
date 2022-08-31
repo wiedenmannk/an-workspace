@@ -1,0 +1,18 @@
+{
+  "extends": "eslint:recommended",
+  "rules": {
+    // enable additional rules
+    "indent": [2, "tab"],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "never"],
+
+    // override configuration set by extending "eslint:recommended"
+    "no-empty": "warn",
+    "no-cond-assign": ["error", "always"],
+
+    // disable rules from base configurations
+    "for-direction": "off"
+  }
+}

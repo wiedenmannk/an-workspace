@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o --project=skeleton",
     "build": "ng build",
     "build:lib": "ng build --project=starter-lib",
     "watch": "ng build --watch --configuration development",
@@ -20,6 +20,8 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
     "primeng": "^14.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

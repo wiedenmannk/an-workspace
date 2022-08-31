@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'skeleton';
+
+  constructor(translate: TranslateService) {
+    translate.setDefaultLang("en");
+    translate.use("en");
+    // const langs = translate.store.translations;
+    // console.log(langs);
+  }
+
 }
