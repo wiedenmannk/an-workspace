@@ -13,6 +13,9 @@
 - npm link starter-lib
 - npm publish to publish in npm repository
 
+* build starter-lib: npm run build:lib
+* build starter-lib in watch mode: npm run watch:lib
+
 # using verdaccio
 
 - npm set registry http://localhost:4873
