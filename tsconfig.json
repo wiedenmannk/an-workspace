@@ -19,8 +19,8 @@
     "target": "es2020",
     "paths": {
       // dist/starter-lib verwendet die lib so wie wenn sie gebaut ist.
-      "starter-lib": ["projects/starter-lib/src/lib"],// ["dist/starter-lib"],
-      "starter-lib/*": ["projects/starter-lib/src/lib/*"],
+      "starter-lib": ["projects/starter-lib/src/"],// ["dist/starter-lib"],
+      "starter-lib/*": ["projects/starter-lib/src/*"],
       "@modules/*": ["projects/skeleton/src/app/modules/*"],
       "@service/*": ["projects/skeleton/src/app/service/*"],
       "@dev/*": ["projects/skeleton/src/app/dev/*"],
