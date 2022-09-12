@@ -5,10 +5,11 @@
     "ng": "ng",
     "start": "ng serve -o --project=skeleton",
     "build": "ng build",
-    "build:lib": "ng build --project=starter-lib",
+    "build:lib": "ng build --project=starter-lib && npm run scssbuild",
     "watch": "ng build --watch --configuration development",
     "watch:lib": "ng build --watch --project=starter-lib",
-    "test": "ng test"
+    "test": "ng test",
+    "scssbuild": "sass projects/starter-lib/src/lib/styles:dist/starter-lib/styles"
   },
   "private": true,
   "dependencies": {

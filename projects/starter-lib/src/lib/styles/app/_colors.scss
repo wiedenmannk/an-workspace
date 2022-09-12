@@ -1,9 +1,11 @@
 $ma-selector: #a6a6a6;
 $ma-border: #353535;
+$error: red;
 
 
 :root {
  --selector: #{$ma-selector};
  --border: #{$ma-border};
  --primary-color: #3B82F6;
+ --error: #{$error};
 }
