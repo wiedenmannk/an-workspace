@@ -3,9 +3,16 @@
     "home": "Home",
     "app-name": "Skeleton App",
     "dashboard": "Dashboard",
+    "demo": "Demo",
     "videos": "Videos",
     "admin": "Admin",
     "developer": "Developer",
     "forms": "Forms"
+  },
+  "menu": {
+    "viewchild": "ViewChild",
+    "forms": "Forms",
+    "observable": "Observable",
+    "table": "Table"
   }
 }

@@ -1,7 +1,8 @@
 export interface MenuItem {
   label: string;
-  link: string;
+  link?: string;
   icon?: string;
+  subMenu?: MenuItem[];
 }
 
 export const menu: MenuItem[] = [
@@ -11,9 +12,18 @@ export const menu: MenuItem[] = [
     icon: 'pi pi-home',
   },
   {
-    label: 'main.dashboard',
-    link: '/dashboard',
+    label: 'main.demo',
     icon: 'pi pi-pencil',
+    subMenu: [
+      {
+        label: 'menu.forms',
+        link: '/demo/forms',
+      },
+      {
+        label: 'menu.table',
+        link: '/demo/table',
+      },
+    ],
   },
   {
     label: 'main.videos',

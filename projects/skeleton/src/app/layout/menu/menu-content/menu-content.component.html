@@ -1,14 +1,35 @@
 <h2 translate *ngIf="title">{{ title }}</h2>
 <ul>
+  <ng-container *ngFor="let item of menuItems; index as i">
     <li
-        *ngFor="let item of menuItems;index as i"
-        (click)="selectItem(item.label+item.link+i)"
-        id="{{item.label}}{{item.link}}{{i}}"
-        routerLink="{{ item.link }}">
-
+      (click)="selectAndNavigate(item.label + i, item)"
+      id="{{ item.label }}{{ i }}"
+    >
+      <div class="nav-label">
         <i *ngIf="item.icon" class="{{ item.icon }}"></i>
         <span class="spacer" *ngIf="!item.icon"></span>
         <span translate>{{ item.label }}</span>
+      </div>
+      <div class="nav-toggle" *ngIf="item.subMenu">
+        <i
+          id="icon-{{ item.label }}{{ i }}"
+          class="nav-font pi pi-angle-right"
+        ></i>
+      </div>
     </li>
+    <ul
+      *ngIf="item.subMenu as subMenu"
+      id="sub{{ item.label }}{{ i }}"
+      class="menu-start"
+    >
+      <li
+        *ngFor="let subItem of subMenu; index as x"
+        (click)="selectItem(subItem.label + subItem.link + x)"
+        id="{{ subItem.label }}{{ subItem.link }}{{ x }}"
+        routerLink="{{ subItem.link }}"
+      >
+        <span translate>{{ subItem.label }}</span>
+      </li>
+    </ul>
+  </ng-container>
 </ul>
-

@@ -86,19 +86,45 @@ a {
     list-style: none;
     padding: 0;
     margin: 0;
-
-  }
-  li {
-    padding: 8px 8px 8px 32px;
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-    display: block;
-    transition: 0.3s;
-    font-size: 18px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
+    li {
+      padding: 8px 8px 8px 32px;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      justify-items: center;
+      transition: 0.3s;
+      font-size: 18px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      .nav-label {
+        width: calc(100% - 40px);
+      }
+      .nav-toggle {
+        width: 40px;
+      }
+    }
+    li:hover {
+      color: white;
+      background: #878787;
+    }
+    ul {
+      list-style: none;
+      padding-left: 50px;
+      transition: 0.3;
+      li {
+        cursor: pointer;
+        text-decoration: none;
+        color: #dbdbdb;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+      li:hover {
+        color: white;
+        background: #999999;
+      }
+    }
 
     i {
       padding-right: 15px;
@@ -109,10 +135,6 @@ a {
 
   }
 
-  li:hover {
-    color: white;
-    background: #878787;
-  }
 
   .selected {
     background-color: #676767;
@@ -159,6 +181,7 @@ p-scrollpanel {
   }
 
   .custombar1 {
+      color: green;
       .p-scrollpanel-wrapper {
           border-right: 9px solid var(--layer-1);
       }
@@ -189,4 +212,27 @@ p-scrollpanel {
           transition: background-color .2s;
         }
   }
+}
+
+.menu-start {
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+}
+
+.menu-end {
+  max-height: 600px;
+  transition: max-height 0.3s ease-in;
+}
+
+.nav-font {
+  font-size: 18px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.transition {
+  transition: all 0.7s linear;
 }
