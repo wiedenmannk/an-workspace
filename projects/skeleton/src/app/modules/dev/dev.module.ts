@@ -7,13 +7,8 @@ import { WelcomeComponent } from "@dev/welcome/welcome.component";
 import { DashboardComponent } from "@dev/dashboard/dashboard.component";
 import { DragDropComponent } from "@dev/drag-drop/drag-drop.component";
 
-
 @NgModule({
-  declarations: [WelcomeComponent, DashboardComponent, DragDropComponent],
-  imports: [
-    CommonModule,
-    DevRoutingModule,
-    MainModule,
-  ]
+	declarations: [WelcomeComponent, DashboardComponent, DragDropComponent],
+	imports: [CommonModule, DevRoutingModule, MainModule],
 })
-export class DevModule { }
+export class DevModule {}

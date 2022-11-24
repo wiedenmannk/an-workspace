@@ -24,7 +24,8 @@
       "@modules/*": ["projects/skeleton/src/app/modules/*"],
       "@service/*": ["projects/skeleton/src/app/service/*"],
       "@dev/*": ["projects/skeleton/src/app/dev/*"],
-      "@appmodel/*": ["projects/skeleton/src/app/model/*"]
+      "@appmodel/*": ["projects/skeleton/src/app/model/*"],
+			"@demo/*": ["projects/skeleton/src/app/demo/*"]
     },
     "module": "es2020",
     "lib": [
