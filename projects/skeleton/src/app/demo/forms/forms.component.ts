@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
+
+interface JobForm {
+	firstName: FormControl<string | null>;
+	lastName: FormControl<string | null>;
+}
 
 @Component({
 	selector: "app-forms",
@@ -7,14 +12,16 @@ import { FormControl, FormGroup } from "@angular/forms";
 	styleUrls: ["./forms.component.scss"],
 })
 export class FormsComponent implements OnInit {
-	jobForm = new FormGroup({
-		firstName: new FormControl(""),
-		lastName: new FormControl(""),
+	jobForm: FormGroup<JobForm> = this.fb.group({
+		firstName: [""],
+		lastName: [""],
 	});
 	preview: string = "";
-	constructor() {}
+	constructor(private fb: FormBuilder) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		console.log("form firstname", this.jobForm.value.firstName);
+	}
 
 	save(): void {
 		this.preview = JSON.stringify(this.jobForm.value);
