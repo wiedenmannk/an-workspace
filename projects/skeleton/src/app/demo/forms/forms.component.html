@@ -12,6 +12,9 @@
 						formControlName="firstName"
 					/>
 				</div>
+				<div *ngIf="jobForm.controls.firstName.errors?.['required']">
+					* Pflichtfeld
+				</div>
 				<div class="mb-3">
 					<label for="lastName" class="form-label">Last Name</label>
 					<input
@@ -20,6 +23,22 @@
 						id="lastName"
 						formControlName="lastName"
 					/>
+				</div>
+				<div class="mb-3">
+					<label for="password" class="form-label">Password</label>
+					<input
+						type="text"
+						class="form-control"
+						id="password"
+						formControlName="password"
+					/>
+				</div>
+				<div *ngIf="jobForm.controls.password.errors as errors">
+					<span *ngIf="errors?.['passwordStrength']"
+						>Passwort ist zu schwach. Groß- und Kleinbuchstaben und Zahl
+						eingeben</span
+					>
+					<div *ngIf="errors?.['required']">* Pflichtfeld</div>
 				</div>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
