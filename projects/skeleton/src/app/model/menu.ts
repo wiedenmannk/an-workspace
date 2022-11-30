@@ -23,6 +23,10 @@ export const menu: MenuItem[] = [
 				label: "menu.table",
 				link: "/demo/table",
 			},
+			{
+				label: "menu.observable",
+				link: "/demo/observe",
+			},
 		],
 	},
 	{

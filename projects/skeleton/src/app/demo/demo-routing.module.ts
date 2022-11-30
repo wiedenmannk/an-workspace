@@ -1,3 +1,4 @@
+import { ObservesComponent } from "./observes/observes.component";
 import { TableComponent } from "./table/table.component";
 import { FormsComponent } from "./forms/forms.component";
 import { NgModule } from "@angular/core";
@@ -11,6 +12,10 @@ const routes: Routes = [
 	{
 		path: "table",
 		component: TableComponent,
+	},
+	{
+		path: "observe",
+		component: ObservesComponent,
 	},
 ];
 
