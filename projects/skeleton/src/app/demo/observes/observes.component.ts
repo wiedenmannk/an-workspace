@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { interval, of, take, map, delay } from "rxjs";
+import { interval, of, take, map } from "rxjs";
 
 @Component({
 	selector: "app-observes",
@@ -7,11 +7,12 @@ import { interval, of, take, map, delay } from "rxjs";
 	styleUrls: ["./observes.component.scss"],
 })
 export class ObservesComponent implements OnInit {
+	msg: any = "Observe this";
 	constructor() {}
 
 	async ngOnInit(): Promise<void> {
 		const progress = [
-			{ name: "Brian" }, [1, 2, 3], function hello(){}
+			{ name: "Brian" }, [1, 2, 3], function hello(): void{}
 		];
 		const source = interval(1000).pipe(
 			take(progress.length),
@@ -52,6 +53,16 @@ export class ObservesComponent implements OnInit {
 			return data;
 		}));
 		return source.toPromise();
+	}
+
+	save(): void {
+		console.log("save");
+		this.msg = "you clicked save";
+	}
+
+	cancel(): void {
+		console.log("cancel");
+		this.msg = "you clicked cancel";
 	}
 
 }

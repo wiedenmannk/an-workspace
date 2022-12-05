@@ -35,7 +35,8 @@
       "@typescript-eslint/no-empty-function": "off",
       "@angular-eslint/no-empty-lifecycle-method": "off",
       "@typescript-eslint/explicit-function-return-type": "warn",
-      "@angular-eslint/template/eqeqeq": "off"
+      "@angular-eslint/template/eqeqeq": "off",
+			"@angular-eslint/no-output-on-prefix": "off"
   	}
 
   },
