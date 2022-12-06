@@ -1,4 +1,9 @@
 <content-layout>
 	<p>{{ msg }}</p>
 	<app-buttonbox (onSave)="save()" (onCancel)="cancel()"></app-buttonbox>
+	<p> Observe messages as async json object </p>
+	<pre>{{ $messages | async | json }}</pre>
+	<p-messages [(value)]="messages" [enableService]="false"></p-messages>
+	<div>check message</div>
+	<pre>{{ messages | json }}</pre>
 </content-layout>

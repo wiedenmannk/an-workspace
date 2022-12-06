@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { interval, of, take, map } from "rxjs";
+import { Message } from "primeng//api";
+import { messagner } from "../services/messanger";
 
 @Component({
 	selector: "app-observes",
@@ -8,9 +10,12 @@ import { interval, of, take, map } from "rxjs";
 })
 export class ObservesComponent implements OnInit {
 	msg: any = "Observe this";
-	constructor() {}
+	messages: Message[] = [];
+	$messages = messagner.$msg;
+	constructor() {
+	}
 
-	async ngOnInit(): Promise<void> {
+	ngOnInit(): void {
 		const progress = [
 			{ name: "Brian" }, [1, 2, 3], function hello(): void{}
 		];
@@ -26,6 +31,14 @@ export class ObservesComponent implements OnInit {
 			console.log("next interval");
 			console.log("interval data",val);
 		});
+
+		this.runPromise();
+
+		this.listenMessages();
+		this.addMessage({severity:"info", summary:"Info Message", detail:"PrimeNG rocks"});
+	}
+
+	private async runPromise(): Promise<void> {
 		console.log("end of interval");
 		console.log("start2");
 		const x = await this.getPromiseData();
@@ -38,7 +51,6 @@ export class ObservesComponent implements OnInit {
 		const myTime = await this.timedPromise();
 		console.log("wait 1 sek for", myTime);
 		console.log("end3 timed promise");
-
 	}
 
 	private async getPromiseData(): Promise<any> {
@@ -64,5 +76,17 @@ export class ObservesComponent implements OnInit {
 		console.log("cancel");
 		this.msg = "you clicked cancel";
 	}
+
+	addMessage(msg: Message): void {
+		this.$messages.next(msg);
+	}
+
+	private listenMessages(): void {
+		this.$messages.subscribe((msg)=>{
+			console.log("incoming msg", msg);
+			this.messages.push(msg);
+		});
+	}
+
 
 }
