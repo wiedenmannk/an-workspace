@@ -27,6 +27,10 @@ export const menu: MenuItem[] = [
 				label: "menu.observable",
 				link: "/demo/observe",
 			},
+			{
+				label: "menu.scrolling",
+				link: "/demo/scrolling",
+			},
 		],
 	},
 	{

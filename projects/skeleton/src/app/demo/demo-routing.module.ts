@@ -1,3 +1,4 @@
+import { ScrollingComponent } from "./scrolling/scrolling.component";
 import { ObservesComponent } from "./observes/observes.component";
 import { TableComponent } from "./table/table.component";
 import { FormsComponent } from "./forms/forms.component";
@@ -17,6 +18,10 @@ const routes: Routes = [
 		path: "observe",
 		component: ObservesComponent,
 	},
+	{
+		path: "scrolling",
+		component: ScrollingComponent,
+	}
 ];
 
 @NgModule({

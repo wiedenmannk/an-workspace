@@ -9,9 +9,10 @@ import { TableComponent } from "./table/table.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ObservesComponent } from "./observes/observes.component";
 import { ButtonboxComponent } from "./buttonbox/buttonbox.component";
+import { ScrollingComponent } from './scrolling/scrolling.component';
 
 @NgModule({
-	declarations: [FormsComponent, TableComponent, ObservesComponent, ButtonboxComponent],
+	declarations: [FormsComponent, TableComponent, ObservesComponent, ButtonboxComponent, ScrollingComponent],
 	imports: [CommonModule, MainModule, DemoRoutingModule, ReactiveFormsModule, StarterLibModule],
 })
 export class DemoModule {}

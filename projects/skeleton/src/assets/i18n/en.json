@@ -13,6 +13,7 @@
     "viewchild": "ViewChild",
     "forms": "Forms",
     "observable": "Observable",
-    "table": "Table"
+    "table": "Table",
+		"scrolling": "Scrolling"
   }
 }

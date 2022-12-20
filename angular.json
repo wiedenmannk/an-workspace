@@ -109,6 +109,11 @@
     },
     "starter-lib": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/starter-lib",
       "sourceRoot": "projects/starter-lib/src",
       "prefix": "lib",
