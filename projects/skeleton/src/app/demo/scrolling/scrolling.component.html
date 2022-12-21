@@ -1,12 +1,7 @@
 <content-layout>
-	<p>scrolling works!</p>
-	<lib-scroller>
-		<p>Bla Blub Mega genialer Text</p>
-		<p>Bla Blub Mega genialer Text</p>
-		<p>Bla Blub Mega genialer Text</p>
-		<p>Bla Blub Mega genialer Text</p>
-		<p>Bla Blub Mega genialer Text</p>
-		<p>Bla Blub Mega genialer Text</p>
-		<p>Bla Blub Mega genialer Text</p>
+	<lib-scroller class="scroller">
+		<p *ngFor="let number of numbers">
+			({{ number }}): Bla Blub Mega genialer Text. Lorem ospek sorum clorum
+		</p>
 	</lib-scroller>
 </content-layout>

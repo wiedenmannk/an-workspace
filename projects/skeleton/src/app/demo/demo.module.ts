@@ -1,3 +1,4 @@
+import { BrowserModule } from "@angular/platform-browser";
 import { StarterLibModule } from "starter-lib";
 import { MainModule } from "@modules/main/main.module";
 import { NgModule } from "@angular/core";
@@ -9,10 +10,32 @@ import { TableComponent } from "./table/table.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ObservesComponent } from "./observes/observes.component";
 import { ButtonboxComponent } from "./buttonbox/buttonbox.component";
-import { ScrollingComponent } from './scrolling/scrolling.component';
+import { ScrollingComponent } from "./scrolling/scrolling.component";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { HttpLoaderFactory } from "../app.module";
+import { HttpClient } from "@angular/common/http";
 
 @NgModule({
-	declarations: [FormsComponent, TableComponent, ObservesComponent, ButtonboxComponent, ScrollingComponent],
-	imports: [CommonModule, MainModule, DemoRoutingModule, ReactiveFormsModule, StarterLibModule],
+	declarations: [
+		FormsComponent,
+		TableComponent,
+		ObservesComponent,
+		ButtonboxComponent,
+		ScrollingComponent,
+	],
+	imports: [
+		CommonModule,
+		MainModule,
+		DemoRoutingModule,
+		ReactiveFormsModule,
+		StarterLibModule,
+		TranslateModule.forChild({
+			loader: {
+				provide: TranslateLoader,
+				useFactory: HttpLoaderFactory,
+				deps: [HttpClient],
+			},
+		}),
+	],
 })
 export class DemoModule {}

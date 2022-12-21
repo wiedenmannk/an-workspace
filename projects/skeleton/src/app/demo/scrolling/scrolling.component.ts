@@ -6,7 +6,12 @@ import { Component, OnInit } from "@angular/core";
 	styleUrls: ["./scrolling.component.scss"],
 })
 export class ScrollingComponent implements OnInit {
-	constructor() {}
+	numbers: Array<number>;
+	constructor() {
+		this.numbers = Array(100)
+			.fill(1)
+			.map((x, i) => i);
+	}
 
 	ngOnInit(): void {}
 }

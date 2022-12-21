@@ -236,3 +236,32 @@ p-scrollpanel {
 .transition {
   transition: all 0.7s linear;
 }
+
+.scroller {
+	height: 150px;
+	width: 200px;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+	background-color: red;
+}
+
+
+lib-scroller {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	display: block;
+}
+
+lib-scroller::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+lib-scroller::-webkit-scrollbar-thumb {
+	background-color: #0973b1;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	border-radius: 10px;
+}
+

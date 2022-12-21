@@ -1,5 +1,4 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
 import { AccordionModule } from "primeng/accordion";
 import { ContentLayoutComponent } from "../../layout/content-layout/content-layout.component";
 import { TabMenuModule } from "primeng/tabmenu";
@@ -10,7 +9,7 @@ const components = [ContentLayoutComponent];
 
 @NgModule({
 	declarations: [...components],
-	imports: [CommonModule],
+	imports: [],
 	exports: [
 		// NgbModule,
 		AccordionModule,
