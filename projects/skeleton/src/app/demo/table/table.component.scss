@@ -1,0 +1,70 @@
+table.scroll {
+	height: 80%;
+	border: 1px solid black;
+}
+table.scroll {
+	width: 100%;
+	background-color: #fff;
+}
+table.scroll thead {
+	display: flex;
+	width: calc(100% - 14px);
+	background: #5dd39e;
+}
+table.scroll thead tr:after {
+	content: '';
+	overflow-y: scroll;
+	visibility: hidden;
+}
+table.scroll thead th {
+	flex: 1 auto;
+	display: block;
+	color: #fff;
+	text-align: left;
+	width: 25%;
+	padding: 5px;
+}
+table.scroll tbody {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+}
+table.scroll thead tr,
+table.scroll tbody tr {
+	display: flex;
+}
+
+table.scroll thead tr:after {
+	content: '';
+	overflow-y: scroll;
+	visibility: hidden;
+}
+table.scroll thead th {
+	flex: 1 auto;
+	display: block;
+	justify-content: left;
+}
+table.scroll thead tr,
+table.scroll tbody tr {
+	display: flex;
+}
+table.scroll tbody tr td {
+	flex: 1 auto;
+	word-wrap: break;
+	width: 25%;
+	padding: 5px;
+	text-align: left;
+	border-bottom: 1px solid #b1aeae;
+}
+
+table.scroll tbody::-webkit-scrollbar {
+	width: 14px;
+	background-color: #F5F5F5;
+}
+
+table.scroll tbody::-webkit-scrollbar-thumb {
+	background-color: #0973b1;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	border-radius: 10px;
+}

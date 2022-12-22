@@ -1,3 +1,20 @@
 <content-layout>
-	<p>table works!</p>
+	<table class="scroll" cellpadding="0" cellspacing="0">
+		<thead>
+			<th>Vorname</th>
+			<th>Nachname</th>
+			<th>Straße</th>
+			<th>Ort</th>
+		</thead>
+		<lib-scroller class="scroller">
+			<tbody>
+				<tr *ngFor="let item of data">
+					<td>{{ item.name }}</td>
+					<td>{{ item.lastName }}</td>
+					<td>{{ item.street }}</td>
+					<td>{{ item.city }}</td>
+				</tr>
+			</tbody>
+		</lib-scroller>
+	</table>
 </content-layout>
