@@ -14,6 +14,7 @@ import { DefaultLayoutComponent } from "./layout/default-layout/default-layout.c
 import { MenuComponent } from "./layout/menu/menu.component";
 import { RouterModule } from "@angular/router";
 import { MenuContentComponent } from "./layout/menu/menu-content/menu-content.component";
+import { NotFoundComponent } from "./not-found/not-found.component";
 
 /*
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -31,6 +32,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 		DefaultLayoutComponent,
 		MenuComponent,
 		MenuContentComponent,
+		NotFoundComponent,
 	],
 	imports: [
 		BrowserModule,

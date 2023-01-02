@@ -14,6 +14,7 @@ import { ScrollingComponent } from "./scrolling/scrolling.component";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { HttpLoaderFactory } from "../app.module";
 import { HttpClient } from "@angular/common/http";
+import { DemoOverviewComponent } from './demo-overview/demo-overview.component';
 
 @NgModule({
 	declarations: [
@@ -22,6 +23,7 @@ import { HttpClient } from "@angular/common/http";
 		ObservesComponent,
 		ButtonboxComponent,
 		ScrollingComponent,
+  DemoOverviewComponent,
 	],
 	imports: [
 		CommonModule,

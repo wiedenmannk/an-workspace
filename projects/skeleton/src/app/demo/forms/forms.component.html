@@ -1,50 +1,50 @@
-<content-layout>
-	<legend>Job Portal</legend>
-	<div class="row">
-		<div class="col col-md-8" style="overflow-y: scroll; max-height: 100vh">
-			<form [formGroup]="jobForm" (ngSubmit)="save()">
-				<div class="mb-3">
-					<label for="firstName" class="form-label">First Name</label>
-					<input
-						type="text"
-						class="form-control"
-						id="firstName"
-						formControlName="firstName"
-					/>
-				</div>
-				<div *ngIf="jobForm.controls.firstName.errors?.['required']">
-					* Pflichtfeld
-				</div>
-				<div class="mb-3">
-					<label for="lastName" class="form-label">Last Name</label>
-					<input
-						type="text"
-						class="form-control"
-						id="lastName"
-						formControlName="lastName"
-					/>
-				</div>
-				<div class="mb-3">
-					<label for="password" class="form-label">Password</label>
-					<input
-						type="text"
-						class="form-control"
-						id="password"
-						formControlName="password"
-					/>
-				</div>
-				<div *ngIf="jobForm.controls.password.errors as errors">
-					<span *ngIf="errors?.['passwordStrength']"
-						>Passwort ist zu schwach. Groß- und Kleinbuchstaben und Zahl
-						eingeben</span
-					>
-					<div *ngIf="errors?.['required']">* Pflichtfeld</div>
-				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</form>
-		</div>
-		<div class="col col-md-4">
-			<div style="position: fixed">{{ preview }}</div>
-		</div>
+<!-- <content-layout> -->
+<legend>Job Portal</legend>
+<div class="row">
+	<div class="col col-md-8" style="overflow-y: scroll; max-height: 100vh">
+		<form [formGroup]="jobForm" (ngSubmit)="save()">
+			<div class="mb-3">
+				<label for="firstName" class="form-label">First Name</label>
+				<input
+					type="text"
+					class="form-control"
+					id="firstName"
+					formControlName="firstName"
+				/>
+			</div>
+			<div *ngIf="jobForm.controls.firstName.errors?.['required']">
+				* Pflichtfeld
+			</div>
+			<div class="mb-3">
+				<label for="lastName" class="form-label">Last Name</label>
+				<input
+					type="text"
+					class="form-control"
+					id="lastName"
+					formControlName="lastName"
+				/>
+			</div>
+			<div class="mb-3">
+				<label for="password" class="form-label">Password</label>
+				<input
+					type="text"
+					class="form-control"
+					id="password"
+					formControlName="password"
+				/>
+			</div>
+			<div *ngIf="jobForm.controls.password.errors as errors">
+				<span *ngIf="errors?.['passwordStrength']"
+					>Passwort ist zu schwach. Groß- und Kleinbuchstaben und Zahl
+					eingeben</span
+				>
+				<div *ngIf="errors?.['required']">* Pflichtfeld</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
 	</div>
-</content-layout>
+	<div class="col col-md-4">
+		<div style="position: fixed">{{ preview }}</div>
+	</div>
+</div>
+<!-- </content-layout> -->

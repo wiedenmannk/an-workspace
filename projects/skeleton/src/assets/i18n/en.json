@@ -14,6 +14,7 @@
     "forms": "Forms",
     "observable": "Observable",
     "table": "Table",
-		"scrolling": "Scrolling"
+		"scrolling": "Scrolling",
+		"overview": "Overview"
   }
 }

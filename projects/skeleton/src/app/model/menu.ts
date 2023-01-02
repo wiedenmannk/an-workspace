@@ -16,6 +16,10 @@ export const menu: MenuItem[] = [
 		icon: "pi pi-pencil",
 		subMenu: [
 			{
+				label: "menu.overview",
+				link: "/demo",
+			},
+			{
 				label: "menu.forms",
 				link: "/demo/forms",
 			},
