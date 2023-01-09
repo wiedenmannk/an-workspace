@@ -14,7 +14,10 @@ import { ScrollingComponent } from "./scrolling/scrolling.component";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { HttpLoaderFactory } from "../app.module";
 import { HttpClient } from "@angular/common/http";
-import { DemoOverviewComponent } from './demo-overview/demo-overview.component';
+import { DemoOverviewComponent } from "./demo-overview/demo-overview.component";
+import { NgTemplateComponent } from "./ng-template/ng-template.component";
+import { HelloWorldComponent } from "./ng-template/hello-world/hello-world.component";
+import { LoopComponent } from "./ng-template/loop/loop.component";
 
 @NgModule({
 	declarations: [
@@ -23,7 +26,10 @@ import { DemoOverviewComponent } from './demo-overview/demo-overview.component';
 		ObservesComponent,
 		ButtonboxComponent,
 		ScrollingComponent,
-  DemoOverviewComponent,
+		DemoOverviewComponent,
+		NgTemplateComponent,
+		HelloWorldComponent,
+		LoopComponent,
 	],
 	imports: [
 		CommonModule,

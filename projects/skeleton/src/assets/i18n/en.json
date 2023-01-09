@@ -15,6 +15,7 @@
     "observable": "Observable",
     "table": "Table",
 		"scrolling": "Scrolling",
-		"overview": "Overview"
+		"overview": "Overview",
+		"ngtemplate": "ng-template"
   }
 }

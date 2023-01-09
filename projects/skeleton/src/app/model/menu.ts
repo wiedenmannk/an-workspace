@@ -35,6 +35,10 @@ export const menu: MenuItem[] = [
 				label: "menu.scrolling",
 				link: "/demo/scrolling",
 			},
+			{
+				label: "menu.ngtemplate",
+				link: "/demo/ngtemplate",
+			},
 		],
 	},
 	{

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o --project=skeleton",
+    "start": "ng serve -o --serve-path=/skeleton/ --project=skeleton",
     "build": "ng build",
     "build:lib": "ng build --project=starter-lib && npm run scssbuild",
     "watch": "ng build --watch --configuration development",
