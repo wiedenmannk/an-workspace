@@ -7,6 +7,7 @@ import { Component, Input, OnInit, TemplateRef } from "@angular/core";
 })
 export class HelloWorldComponent implements OnInit {
 	@Input() helloTemplate?: TemplateRef<any>;
+
 	constructor() {}
 
 	ngOnInit(): void {}

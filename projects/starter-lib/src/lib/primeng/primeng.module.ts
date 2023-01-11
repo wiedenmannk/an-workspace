@@ -4,6 +4,7 @@ import { ButtonModule } from "primeng/button";
 import { RippleModule } from "primeng/ripple";
 import { MessagesModule } from "primeng/messages";
 import { MessageModule } from "primeng/message";
+import { DropdownModule } from "primeng/dropdown";
 
 const exportModules: any = [
 	ScrollPanelModule,
@@ -11,6 +12,7 @@ const exportModules: any = [
 	RippleModule,
 	MessageModule,
 	MessagesModule,
+	DropdownModule,
 ];
 
 @NgModule({

@@ -242,6 +242,11 @@ p-scrollpanel {
 	width: 100%;
 }
 
+.demo-scroller {
+	height: calc(100% - 120px);
+	width: 100%;
+}
+
 .scroller::-webkit-scrollbar-thumb {
 	background-color: red;
 }

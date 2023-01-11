@@ -1,1 +1,6 @@
-<p>hello-world works!</p>
+<span>Hello </span>
+<ng-template #default>
+	<span>World</span>
+</ng-template>
+<!-- use default template -->
+<ng-container [ngTemplateOutlet]="helloTemplate || default"> </ng-container>

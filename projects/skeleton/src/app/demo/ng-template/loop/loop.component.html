@@ -1,1 +1,11 @@
-<p>loop works!</p>
+<ul>
+	<li *ngFor="let option of cities; index as i">
+		<ng-template #defaultTemplate let-city>{{ option.name }}</ng-template>
+
+		<ng-container
+			[ngTemplateOutlet]="listTemplate || defaultTemplate"
+			[ngTemplateOutletContext]="{ $implicit: option, index: i }"
+		>
+		</ng-container>
+	</li>
+</ul>

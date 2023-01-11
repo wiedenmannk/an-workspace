@@ -1,4 +1,4 @@
-import { NgTemplateComponent } from "./ng-template/ng-template.component";
+import { NgTemplateComponent } from "./ng-template/new-content.component";
 import { DemoOverviewComponent } from "./demo-overview/demo-overview.component";
 import { ScrollingComponent } from "./scrolling/scrolling.component";
 import { ObservesComponent } from "./observes/observes.component";

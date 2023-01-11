@@ -15,7 +15,7 @@ import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { HttpLoaderFactory } from "../app.module";
 import { HttpClient } from "@angular/common/http";
 import { DemoOverviewComponent } from "./demo-overview/demo-overview.component";
-import { NgTemplateComponent } from "./ng-template/ng-template.component";
+import { NgTemplateComponent } from "./ng-template/new-content.component";
 import { HelloWorldComponent } from "./ng-template/hello-world/hello-world.component";
 import { LoopComponent } from "./ng-template/loop/loop.component";
 
@@ -36,6 +36,7 @@ import { LoopComponent } from "./ng-template/loop/loop.component";
 		MainModule,
 		DemoRoutingModule,
 		ReactiveFormsModule,
+		FormsModule,
 		StarterLibModule,
 		TranslateModule.forChild({
 			loader: {

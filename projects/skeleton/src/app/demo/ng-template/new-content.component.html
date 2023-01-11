@@ -1,0 +1,39 @@
+<lib-scroller class="demo-scroller">
+	<h1>zeige defaults oder nicht if else</h1>
+	<!-- if and else -->
+	<div>
+		<ng-template #myTemplate> zeige mich </ng-template>
+		<div *ngIf="isDefault; else myTemplate">zeige default</div>
+	</div>
+	<ng-container *ngIf="isLoggedIn; then loggedIn; else loggedOut">
+	</ng-container>
+	<ng-template #loggedIn>
+		<div>Welcome back, friend.</div>
+	</ng-template>
+	<ng-template #loggedOut>
+		<div>Please friend, login.</div>
+	</ng-template>
+
+	<h1>How to use ng-template for different content</h1>
+	<h2>Hello World with my template</h2>
+	<ng-template #helloTemplate>
+		<span style="color: rebeccapurple">Klaus</span>
+	</ng-template>
+	<app-hello-world [helloTemplate]="helloTemplate">
+		test
+		<ng-template #message>Hello Franky</ng-template>
+	</app-hello-world>
+	<h2>Hello World with default template</h2>
+	<app-hello-world></app-hello-world>
+
+	<h2>Use loop in ng-template</h2>
+	<ng-template #myList let-city>
+		<span style="color: cadetblue">{{ city.name }}</span>
+		<span> {{ city.code }}</span>
+	</ng-template>
+
+	<h3>with my template</h3>
+	<app-loop [cities]="cities" [listTemplate]="myList"></app-loop>
+	<h3>with default</h3>
+	<app-loop [cities]="cities"></app-loop>
+</lib-scroller>
