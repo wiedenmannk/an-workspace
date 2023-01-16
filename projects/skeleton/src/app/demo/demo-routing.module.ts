@@ -1,3 +1,4 @@
+import { EasyComponentLoaderComponent } from "./easy-component-loader/easy-component-loader.component";
 import { NgTemplateComponent } from "./ng-template/new-content.component";
 import { DemoOverviewComponent } from "./demo-overview/demo-overview.component";
 import { ScrollingComponent } from "./scrolling/scrolling.component";
@@ -32,27 +33,12 @@ const routes: Routes = [
 				path: "ngtemplate",
 				component: NgTemplateComponent,
 			},
+			{
+				path: "easyloader",
+				component: EasyComponentLoaderComponent,
+			},
 		],
 	},
-	/*
-
-	{
-		path: "forms",
-		component: FormsComponent,
-	},
-	{
-		path: "table",
-		component: TableComponent,
-	},
-	{
-		path: "observe",
-		component: ObservesComponent,
-	},
-	{
-		path: "scrolling",
-		component: ScrollingComponent,
-	}
-*/
 ];
 
 @NgModule({

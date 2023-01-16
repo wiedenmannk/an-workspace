@@ -18,6 +18,7 @@ import { DemoOverviewComponent } from "./demo-overview/demo-overview.component";
 import { NgTemplateComponent } from "./ng-template/new-content.component";
 import { HelloWorldComponent } from "./ng-template/hello-world/hello-world.component";
 import { LoopComponent } from "./ng-template/loop/loop.component";
+import { EasyComponentLoaderComponent } from "./easy-component-loader/easy-component-loader.component";
 
 @NgModule({
 	declarations: [
@@ -30,6 +31,7 @@ import { LoopComponent } from "./ng-template/loop/loop.component";
 		NgTemplateComponent,
 		HelloWorldComponent,
 		LoopComponent,
+		EasyComponentLoaderComponent,
 	],
 	imports: [
 		CommonModule,

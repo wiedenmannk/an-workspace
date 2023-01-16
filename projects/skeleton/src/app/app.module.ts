@@ -1,3 +1,4 @@
+import { StarterLibModule } from "starter-lib";
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -42,6 +43,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 		AppRoutingModule,
 		HttpClientModule,
 		MainModule,
+		StarterLibModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,

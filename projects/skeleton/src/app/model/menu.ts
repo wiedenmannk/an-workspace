@@ -39,6 +39,10 @@ export const menu: MenuItem[] = [
 				label: "menu.ngtemplate",
 				link: "/demo/ngtemplate",
 			},
+			{
+				label: "menu.easyloader",
+				link: "/demo/easyloader",
+			},
 		],
 	},
 	{

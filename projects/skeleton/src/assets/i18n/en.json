@@ -16,6 +16,7 @@
     "table": "Table",
 		"scrolling": "Scrolling",
 		"overview": "Overview",
-		"ngtemplate": "ng-template"
+		"ngtemplate": "ng-template",
+		"easyloader": "Easy Loader"
   }
 }
