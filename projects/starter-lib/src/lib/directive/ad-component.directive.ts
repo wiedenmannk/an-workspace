@@ -15,6 +15,14 @@ export class AdComponentDirective implements OnInit {
 	ngOnInit(): void {
 		console.log("adComponent", this.adComponent);
 		console.log("map", this.cms.componentMap);
-		this.viewContainerRef.createComponent(this.adComponent);
+		this.viewContainerRef.clear();
+		if (this.useMap) {
+			const component = this.cms.getKey(this.adComponent);
+			if (component) {
+				this.viewContainerRef.createComponent(component);
+			}
+		} else {
+			this.viewContainerRef.createComponent(this.adComponent);
+		}
 	}
 }

@@ -1,8 +1,9 @@
+import { componentMap } from "./../model/cms";
 import { City } from "./../ng-template/model/cities";
 import { LoopComponent } from "./../ng-template/loop/loop.component";
 import { HelloWorldComponent } from "./../ng-template/hello-world/hello-world.component";
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { AdDirective, AdComponentDirective } from "starter-lib";
+import { AdDirective, ComponentMapService } from "starter-lib";
 
 @Component({
 	selector: "app-easy-component-loader",
@@ -19,7 +20,11 @@ export class EasyComponentLoaderComponent implements OnInit, OnDestroy {
 		{ name: "Berlin", code: "B" },
 	];
 	myComponent = HelloWorldComponent;
-	constructor() {}
+	constructor(private cms: ComponentMapService) {
+		this.cms.componentMap = componentMap;
+		this.cms.hasMap = true;
+		console.log("my component found", this.cms.getKey("HelloWorld"));
+	}
 
 	ngOnInit(): void {
 		this.loadComponent();

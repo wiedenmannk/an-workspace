@@ -1,6 +1,6 @@
 <ul>
 	<li *ngFor="let option of cities; index as i">
-		<ng-template #defaultTemplate let-city>{{ option.name }}</ng-template>
+		<ng-template #defaultTemplate>{{ option.name }}</ng-template>
 
 		<ng-container
 			[ngTemplateOutlet]="listTemplate || defaultTemplate"
