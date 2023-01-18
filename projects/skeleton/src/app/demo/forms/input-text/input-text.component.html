@@ -1,0 +1,9 @@
+<span class="p-input" *ngIf="data && data.formControl; else noFormControl">
+	<label>MyInput</label>
+	<input type="text" [formControl]="data.formControl" pInputText />
+</span>
+<ng-template #noFormControl>
+	<p>
+		<span style="color: red"> formControl is missing </span>
+	</p>
+</ng-template>

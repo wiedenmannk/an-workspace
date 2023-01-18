@@ -9,7 +9,7 @@ import { FormsComponent } from "./forms/forms.component";
 import { TableComponent } from "./table/table.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ObservesComponent } from "./observes/observes.component";
-import { ButtonboxComponent } from "./buttonbox/buttonbox.component";
+import { ButtonboxComponent } from "./button/buttonbox/buttonbox.component";
 import { ScrollingComponent } from "./scrolling/scrolling.component";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { HttpLoaderFactory } from "../app.module";
@@ -19,6 +19,8 @@ import { NgTemplateComponent } from "./ng-template/new-content.component";
 import { HelloWorldComponent } from "./ng-template/hello-world/hello-world.component";
 import { LoopComponent } from "./ng-template/loop/loop.component";
 import { EasyComponentLoaderComponent } from "./easy-component-loader/easy-component-loader.component";
+import { ButtonContainerComponent } from "./button/button-container/button-container.component";
+import { InputTextComponent } from './forms/input-text/input-text.component';
 
 @NgModule({
 	declarations: [
@@ -32,6 +34,8 @@ import { EasyComponentLoaderComponent } from "./easy-component-loader/easy-compo
 		HelloWorldComponent,
 		LoopComponent,
 		EasyComponentLoaderComponent,
+		ButtonContainerComponent,
+  InputTextComponent,
 	],
 	imports: [
 		CommonModule,
