@@ -1,9 +1,14 @@
-<span class="p-input" *ngIf="data && data.formControl; else noFormControl">
-	<label>MyInput</label>
-	<input type="text" [formControl]="data.formControl" pInputText />
+<span class="input-text">
+	<label>{{ data.label }}</label>
+	<input
+		*ngIf="data.formControl"
+		type="text"
+		[formControl]="data.formControl"
+		pInputText
+	/>
 </span>
-<ng-template #noFormControl>
-	<p>
-		<span style="color: red"> formControl is missing </span>
+<div *ngIf="errors.length > 0">
+	<p *ngFor="let error of errors">
+		<span style="color: red"> {{ error }} </span>
 	</p>
-</ng-template>
+</div>

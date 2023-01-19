@@ -1,5 +1,13 @@
+import { ModelReciever, UniversalComponent } from "./../model/generics";
+import { InputTextComponent } from "./../../../../skeleton/src/app/demo/forms/input-text/input-text.component";
 import { ComponentMapService } from "./../service/component-map.service";
-import { Directive, Input, ViewContainerRef, OnInit } from "@angular/core";
+import {
+	Directive,
+	Input,
+	ViewContainerRef,
+	OnInit,
+	Component,
+} from "@angular/core";
 
 @Directive({
 	selector: "[adComponent]",
@@ -7,6 +15,7 @@ import { Directive, Input, ViewContainerRef, OnInit } from "@angular/core";
 export class AdComponentDirective implements OnInit {
 	@Input() adComponent: any;
 	@Input() useMap: boolean = this.cms.hasMap;
+	@Input() data?: any;
 	constructor(
 		private viewContainerRef: ViewContainerRef,
 		private cms: ComponentMapService
@@ -16,13 +25,26 @@ export class AdComponentDirective implements OnInit {
 		console.log("adComponent", this.adComponent);
 		console.log("map", this.cms.componentMap);
 		this.viewContainerRef.clear();
+		let componentRef;
 		if (this.useMap) {
-			const component = this.cms.getKey(this.adComponent);
-			if (component) {
-				this.viewContainerRef.createComponent(component);
-			}
+			componentRef = this.cms.getKey(this.adComponent);
 		} else {
-			this.viewContainerRef.createComponent(this.adComponent);
+			componentRef = this.adComponent;
+		}
+		console.log("myComponent", componentRef);
+		if (componentRef) {
+			console.log("generate component");
+			const component: { instance: UniversalComponent } =
+				this.viewContainerRef.createComponent(componentRef);
+			if (this.data && component) {
+				console.log("data parameter", this.data);
+				if (component.instance) {
+					component.instance.data = this.data;
+				}
+				//
+				console.log("instance of ref", component);
+				console.log("createt with data");
+			}
 		}
 	}
 }

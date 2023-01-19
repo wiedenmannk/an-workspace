@@ -1,16 +1,26 @@
 <lib-scroller class="form-scroller">
-	<h1>Load Component</h1>
+	<h3>Load Component without parameters in template</h3>
 	<ng-template adHost></ng-template>
 
 	<h2>Loader with Component as Parameter</h2>
 	<ng-template [adComponent]="myComponent" [useMap]="false"></ng-template>
 	<div></div>
 	<ng-template adComponent="HelloWorld"></ng-template>
-	<form [formGroup]="testForm">
-		<app-input-text [data]="inputData"></app-input-text>
-	</form>
-	<div>test: {{ testForm.controls["test"].value }}</div>
-
+	<!-- <form [formGroup]="testForm"> -->
+	<p>
+		<app-input-text [data]="inputData!"></app-input-text>
+	</p>
+	<h5>Input with Directive Dynamic</h5>
+	<p>
+		<ng-template adComponent="inputText" [data]="inputDynamic"></ng-template>
+	</p>
+	<!-- </form> -->
+	<div>
+		<p>test: {{ testForm.controls["test"].value }}</p>
+	</div>
+	<div>
+		<p>dynamic: {{ testForm.controls["dynamic"].value }}</p>
+	</div>
 	<app-button-container>
 		<p-button label="checkForm" (onClick)="checkForm()"></p-button>
 	</app-button-container>

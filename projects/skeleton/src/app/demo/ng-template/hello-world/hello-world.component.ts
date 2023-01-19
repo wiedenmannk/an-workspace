@@ -1,3 +1,4 @@
+import { UniversalComponent } from "./../../../../../../starter-lib/src/lib/model/generics";
 import { Component, Input, OnInit, TemplateRef } from "@angular/core";
 
 @Component({
@@ -5,8 +6,9 @@ import { Component, Input, OnInit, TemplateRef } from "@angular/core";
 	templateUrl: "./hello-world.component.html",
 	styleUrls: ["./hello-world.component.scss"],
 })
-export class HelloWorldComponent implements OnInit {
+export class HelloWorldComponent implements OnInit, UniversalComponent {
 	@Input() helloTemplate?: TemplateRef<any>;
+	@Input() data: any;
 
 	constructor() {}
 

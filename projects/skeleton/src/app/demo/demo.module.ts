@@ -20,7 +20,7 @@ import { HelloWorldComponent } from "./ng-template/hello-world/hello-world.compo
 import { LoopComponent } from "./ng-template/loop/loop.component";
 import { EasyComponentLoaderComponent } from "./easy-component-loader/easy-component-loader.component";
 import { ButtonContainerComponent } from "./button/button-container/button-container.component";
-import { InputTextComponent } from './forms/input-text/input-text.component';
+import { InputTextComponent } from "./forms/input-text/input-text.component";
 
 @NgModule({
 	declarations: [
@@ -35,7 +35,7 @@ import { InputTextComponent } from './forms/input-text/input-text.component';
 		LoopComponent,
 		EasyComponentLoaderComponent,
 		ButtonContainerComponent,
-  InputTextComponent,
+		InputTextComponent,
 	],
 	imports: [
 		CommonModule,
