@@ -11,3 +11,4 @@ export * from "./lib/directive/ad.directive";
 export * from "./lib/directive/ad-component.directive";
 export * from "./lib/service/component-map.service";
 export * from "./lib/model/component-map";
+export * from "./lib/model/generics";

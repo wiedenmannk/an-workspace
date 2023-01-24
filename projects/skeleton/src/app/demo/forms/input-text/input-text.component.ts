@@ -1,5 +1,4 @@
-import { GenericComponent } from "./../../../../../../starter-lib/src/lib/model/generics";
-import { UniversalComponent } from "../../../../../../starter-lib/src/lib/model/generics";
+import { GenericComponent, UniversalComponent } from "starter-lib";
 import { Component, OnInit, Input } from "@angular/core";
 import { InputModel } from "@demo/model/input-model";
 
