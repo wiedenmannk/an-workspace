@@ -1,11 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Subject, takeUntil } from "rxjs";
 
 @Component({
 	selector: "app-inject-container",
 	templateUrl: "./inject-container.component.html",
 	styleUrls: ["./inject-container.component.scss"],
 })
-export class InjectContainerComponent implements OnInit {
+export class InjectContainerComponent implements OnInit, OnDestroy {
 	dataModel: Array<{ label: string; action: string; css: string }> = [
 		{
 			label: "test1",
@@ -24,9 +25,19 @@ export class InjectContainerComponent implements OnInit {
 		},
 	];
 	chosenAction: string = "";
-	constructor() {}
+	reciever = new Subject<any>();
+	$isDestroyed = new Subject<any>();
+	constructor() {
+		this.reciever.pipe(takeUntil(this.$isDestroyed)).subscribe((action) => {
+			console.log("reciever get action", action);
+		});
+	}
 
 	ngOnInit(): void {}
+
+	ngOnDestroy(): void {
+		this.$isDestroyed.complete();
+	}
 
 	recieveAction(event: any): void {
 		this.chosenAction = event;

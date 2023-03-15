@@ -26,4 +26,31 @@
 			{{ chosenAction }}
 		</p>
 	</div>
+
+	<h2>Calling Inject-Reciever Component</h2>
+	<ng-template #rButtons let-model="model" let-r="r">
+		<div>
+			<button
+				class="mr-2 {{ m.css }}"
+				*ngFor="let m of model"
+				pButton
+				(click)="r.next(m.action)"
+			>
+				{{ m.label }}
+			</button>
+		</div>
+	</ng-template>
+
+	<app-inject-reciever
+		[template]="rButtons"
+		[dataModel]="dataModel"
+		[reciever]="reciever"
+	></app-inject-reciever>
+	<h2>Show Output again in Inject Container Component</h2>
+	<div>
+		<h4>Chosen Action</h4>
+		<p>
+			{{ reciever | async }}
+		</p>
+	</div>
 </content-layout>

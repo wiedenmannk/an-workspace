@@ -1,0 +1,10 @@
+<div>
+	<h2>Injecting Reciever</h2>
+</div>
+<div>
+	<ng-container
+		[ngTemplateOutlet]="template"
+		[ngTemplateOutletContext]="{ model: dataModel, r: reciever }"
+	>
+	</ng-container>
+</div>
