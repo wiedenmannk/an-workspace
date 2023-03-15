@@ -1,3 +1,29 @@
 <content-layout>
-	<p>inject-container works!</p>
+	<h3>Inject Container</h3>
+	<ng-template #buttons let-model="model">
+		<div>
+			<button
+				class="mr-2 {{ m.css }}"
+				*ngFor="let m of model"
+				pButton
+				(click)="inject.action(m.action)"
+			>
+				{{ m.label }}
+			</button>
+		</div>
+	</ng-template>
+	<h2>Calling Inject-Function Component</h2>
+	<app-inject-function
+		#inject
+		[template]="buttons"
+		[dataModel]="dataModel"
+		(doAction)="recieveAction($event)"
+	></app-inject-function>
+	<h2>Show Output again in Inject Container Component</h2>
+	<div>
+		<h4>Chosen Action</h4>
+		<p>
+			{{ chosenAction }}
+		</p>
+	</div>
 </content-layout>
