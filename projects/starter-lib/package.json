@@ -1,6 +1,6 @@
 {
   "name": "starter-lib",
-  "version": "0.0.104",
+  "version": "0.0.200",
   "peerDependencies": {
     "@angular/common": "^14.1.0",
     "@angular/core": "^14.1.0",
@@ -8,5 +8,8 @@
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+	"publishConfig": {
+    "registry": "http://localhost:4873"
   }
 }

@@ -24,6 +24,11 @@ const routes: Routes = [
 					import("@demo/demo.module").then((m) => m.DemoModule),
 			},
 			{
+				path: "concept",
+				loadChildren: () =>
+					import("./concept/concept.module").then((m) => m.ConceptModule),
+			},
+			{
 				path: "**",
 				component: NotFoundComponent,
 			},

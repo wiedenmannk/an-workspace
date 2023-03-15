@@ -46,6 +46,16 @@ export const menu: MenuItem[] = [
 		],
 	},
 	{
+		label: "menu.proove-of-concept",
+		icon: "pi pi-tablet",
+		subMenu: [
+			{
+				label: "menu.inject-function",
+				link: "/concept/injectFunction",
+			},
+		],
+	},
+	{
 		label: "main.videos",
 		link: "/video",
 		icon: "pi pi-video",
