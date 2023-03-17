@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { Subject } from "rxjs";
 
 class Msg {
-	name = "Klaus";
+	private name = "Klaus";
+	public reciever?: Subject<any>;
 
 	sendMsg(msg: string): void {
 		console.log("msg", msg);
@@ -14,6 +16,16 @@ class Msg {
 		const msgName = `${msg} ${myName}`;
 		console.log("msg and name", msgName);
 	}
+
+	setReciever(r: Subject<any>): void {
+		this.reciever = r;
+	}
+
+	sendName(): void {
+		if (this.reciever) {
+			this.reciever.next("mein Name ist " + this.name);
+		}
+	}
 }
 
 @Component({
@@ -24,19 +36,42 @@ class Msg {
 export class PlaygroundComponent implements OnInit {
 	message: string = "welcome";
 	msg = new Msg();
+	reciever = new Subject<any>();
 
 	constructor() {}
 
 	ngOnInit(): void {
-		this.callFn(this.msg.sendMsg, "test");
-		console.log("call directly");
+		console.log("class test");
+		this.reciever.subscribe((r) => {
+			console.log("ich höre zu");
+			console.log("ich empfange r", r);
+		});
+		this.msg.setReciever(this.reciever);
+		this.msg.sendMsg("Hello");
+		this.callFn(this.msg.sendMsg, "Genial");
 		this.msg.sendMsgName("Hello");
-		console.log("callback");
-		this.callFn(this.msg.sendMsgName, "Greetings");
+		this.callFn(this.msg.sendMsgName, "Mach mal was");
+		this.callObject(this.msg, "Jetzt aber");
+		this.reciever.next("halllllloooooooooooooooooo");
+		if (this.msg.reciever) {
+			this.msg.reciever.next("von msg class");
+			this.msg.reciever.next({
+				action: "add",
+				object: {
+					id: "10",
+					text: "Hello World",
+				},
+			});
+			this.msg.sendName();
+		}
 	}
 
 	callFn(fn: Function, param: any): void {
-		console.log("call function", fn);
+		console.log("my Function", fn);
 		fn(param);
+	}
+
+	callObject(ob: any, param: any): void {
+		ob.sendMsgName(param);
 	}
 }
