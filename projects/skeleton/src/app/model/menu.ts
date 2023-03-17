@@ -53,6 +53,10 @@ export const menu: MenuItem[] = [
 				label: "menu.inject-function",
 				link: "/concept/injectFunction",
 			},
+			{
+				label: "menu.playground",
+				link: "/concept/playground",
+			},
 		],
 	},
 	{

@@ -19,6 +19,7 @@
 		"ngtemplate": "ng-template",
 		"easyloader": "Easy Loader",
 		"proove-of-concept": "Proove concept",
-		"inject-function": "inject function"
+		"inject-function": "inject function",
+		"playground": "Playground"
   }
 }
