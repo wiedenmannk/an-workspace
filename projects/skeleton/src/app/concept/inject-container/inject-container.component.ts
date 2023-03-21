@@ -25,6 +25,7 @@ export class InjectContainerComponent implements OnInit, OnDestroy {
 		},
 	];
 	chosenAction: string = "";
+	chosenSomething: string = "";
 	reciever = new Subject<any>();
 	$isDestroyed = new Subject<any>();
 	constructor() {
@@ -37,6 +38,11 @@ export class InjectContainerComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy(): void {
 		this.$isDestroyed.complete();
+	}
+
+	doSomething(action: string): void {
+		console.log("do this", this);
+		this.chosenSomething = action;
 	}
 
 	recieveAction(event: any): void {

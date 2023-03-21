@@ -1,56 +1,78 @@
 <content-layout>
-	<h3>Inject Container</h3>
-	<ng-template #buttons let-model="model">
+	<lib-scroller>
+		<h3>Inject Container</h3>
+		<ng-template #buttons let-model="model">
+			<div>
+				<button
+					class="mr-2 {{ m.css }}"
+					*ngFor="let m of model"
+					pButton
+					(click)="inject.action(m.action)"
+				>
+					{{ m.label }}
+				</button>
+			</div>
+		</ng-template>
+		<h2>Calling Inject-Function Component</h2>
+		<app-inject-function
+			#inject
+			[template]="buttons"
+			[dataModel]="dataModel"
+			(doAction)="recieveAction($event)"
+		></app-inject-function>
+		<h2>Show Output again in Inject Container Component</h2>
 		<div>
-			<button
-				class="mr-2 {{ m.css }}"
-				*ngFor="let m of model"
-				pButton
-				(click)="inject.action(m.action)"
-			>
-				{{ m.label }}
-			</button>
+			<h4>Chosen Action</h4>
+			<p>
+				{{ chosenAction }}
+			</p>
 		</div>
-	</ng-template>
-	<h2>Calling Inject-Function Component</h2>
-	<app-inject-function
-		#inject
-		[template]="buttons"
-		[dataModel]="dataModel"
-		(doAction)="recieveAction($event)"
-	></app-inject-function>
-	<h2>Show Output again in Inject Container Component</h2>
-	<div>
-		<h4>Chosen Action</h4>
-		<p>
-			{{ chosenAction }}
-		</p>
-	</div>
 
-	<h2>Calling Inject-Reciever Component</h2>
-	<ng-template #rButtons let-model="model" let-r="r">
+		<h2>Calling Inject-Reciever Component</h2>
+		<ng-template #rButtons let-model="model" let-r="r">
+			<div>
+				<button
+					class="mr-2 {{ m.css }}"
+					*ngFor="let m of model"
+					pButton
+					(click)="r.next(m.action)"
+				>
+					{{ m.label }}
+				</button>
+			</div>
+		</ng-template>
+
+		<app-inject-reciever
+			[template]="rButtons"
+			[dataModel]="dataModel"
+			[reciever]="reciever"
+		></app-inject-reciever>
+		<h2>Show Output again in Inject Container Component</h2>
 		<div>
-			<button
-				class="mr-2 {{ m.css }}"
-				*ngFor="let m of model"
-				pButton
-				(click)="r.next(m.action)"
-			>
-				{{ m.label }}
-			</button>
+			<h4>Chosen Action</h4>
+			<p>
+				{{ reciever | async }}
+			</p>
 		</div>
-	</ng-template>
 
-	<app-inject-reciever
-		[template]="rButtons"
-		[dataModel]="dataModel"
-		[reciever]="reciever"
-	></app-inject-reciever>
-	<h2>Show Output again in Inject Container Component</h2>
-	<div>
-		<h4>Chosen Action</h4>
-		<p>
-			{{ reciever | async }}
-		</p>
-	</div>
+		<h2>Calling Inject-Directy Component</h2>
+		<ng-template #custom>
+			<div>
+				<button class="mr-2" pButton (click)="doSomething('custom')">
+					Do Something
+				</button>
+			</div>
+		</ng-template>
+		<app-inject-function
+			[template]="custom"
+			[dataModel]="dataModel"
+		></app-inject-function>
+		<h2>Show Output again in Inject Container Component</h2>
+		<div>
+			<h4>Chosen Action</h4>
+			<p>
+				{{ chosenSomething }}
+			</p>
+		</div>
+	</lib-scroller>
 </content-layout>
