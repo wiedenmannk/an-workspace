@@ -6,6 +6,7 @@ class Msg {
 	public reciever?: Subject<any>;
 
 	sendMsg(msg: string): void {
+		console.log("this (msg class)", this);
 		console.log("msg", msg);
 	}
 
@@ -37,6 +38,7 @@ export class PlaygroundComponent implements OnInit {
 	message: string = "welcome";
 	msg = new Msg();
 	reciever = new Subject<any>();
+	x = "xxxx";
 
 	constructor() {}
 
@@ -45,10 +47,13 @@ export class PlaygroundComponent implements OnInit {
 		this.reciever.subscribe((r) => {
 			console.log("ich höre zu");
 			console.log("ich empfange r", r);
+			console.log("x", this.x);
 		});
 		this.msg.setReciever(this.reciever);
 		this.msg.sendMsg("Hello");
+		console.log("msg as callback");
 		this.callFn(this.msg.sendMsg, "Genial");
+		console.log("msg directly");
 		this.msg.sendMsgName("Hello");
 		this.callFn(this.msg.sendMsgName, "Mach mal was");
 		this.callObject(this.msg, "Jetzt aber");

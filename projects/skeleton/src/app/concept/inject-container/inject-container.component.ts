@@ -31,6 +31,14 @@ export class InjectContainerComponent implements OnInit, OnDestroy {
 	constructor() {
 		this.reciever.pipe(takeUntil(this.$isDestroyed)).subscribe((action) => {
 			console.log("reciever get action", action);
+			switch (action) {
+				case "doIt":
+					this.hello();
+					break;
+				default:
+					console.log("default");
+					break;
+			}
 		});
 	}
 
@@ -38,6 +46,11 @@ export class InjectContainerComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy(): void {
 		this.$isDestroyed.complete();
+	}
+
+	hello(): void {
+		console.log("call hello");
+		console.log("this", this);
 	}
 
 	doSomething(action: string): void {
