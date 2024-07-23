@@ -6,9 +6,14 @@ import { ScrollerComponent } from "./components/scroller/scroller.component";
 import { ScrollContainerComponent } from "./components/scroll-container/scroll-container.component";
 import { AdDirective } from "./directive/ad.directive";
 import { AdComponentDirective } from "./directive/ad-component.directive";
+import { ContentLayoutComponent } from "./components/content-layout/content-layout.component";
+/*
+
+*/
 
 const exportModules: any = [PrimengModule];
 const components: any = [
+	ContentLayoutComponent,
 	StarterLibComponent,
 	ScrollPanelComponent,
 	ScrollerComponent,

@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'lib-starter-lib',
-  template: `
-    <p>
-      starter-lib works!
-    </p>
-  `,
-  styles: [
-  ]
+	selector: "lib-starter-lib",
+	template: `
+		<content-layout
+			><p class="welcome">Welcome to Starter Lib</p></content-layout
+		>
+	`,
+	styles: [],
 })
 export class StarterLibComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {}
 }

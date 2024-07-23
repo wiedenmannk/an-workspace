@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve -o --serve-path=/skeleton/ --project=skeleton",
     "build": "ng build",
-    "build:lib": "ng build --project=starter-lib && npm run scssbuild",
+    "build:lib": "ng build --project=starter-lib",
     "watch": "ng build --watch --configuration development",
     "watch:lib": "ng build --watch --project=starter-lib",
     "test": "ng test",

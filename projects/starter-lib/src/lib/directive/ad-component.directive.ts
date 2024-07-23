@@ -1,13 +1,6 @@
-import { ModelReciever, UniversalComponent } from "./../model/generics";
-import { InputTextComponent } from "./../../../../skeleton/src/app/demo/forms/input-text/input-text.component";
+import { UniversalComponent } from "./../model/generics";
 import { ComponentMapService } from "./../service/component-map.service";
-import {
-	Directive,
-	Input,
-	ViewContainerRef,
-	OnInit,
-	Component,
-} from "@angular/core";
+import { Directive, Input, ViewContainerRef, OnInit } from "@angular/core";
 
 @Directive({
 	selector: "[adComponent]",

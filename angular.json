@@ -124,7 +124,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/starter-lib/ng-package.json"          },
+            "project": "projects/starter-lib/ng-package.json"
+					},
           "configurations": {
             "production": {
               "tsConfig": "projects/starter-lib/tsconfig.lib.prod.json"
